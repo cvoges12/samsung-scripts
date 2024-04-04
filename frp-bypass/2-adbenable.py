@@ -1,9 +1,14 @@
-# serial stuff
 import serial
 import time
 
-ser = serial.Serial("/dev/ttyACM0", baudrate=115200)
+# set serial port + baud rate
+port="/dev/ttyACM0"
+baudrate=115200
+ser = serial.Serial(port, baudrate=baudrate)
 
+print("Using port", port, "with a baudrate of", baudrate, "...")
+
+# r/w function
 def write_and_read(ser, command):
     try:
         ser.write(command.encode())
@@ -13,6 +18,7 @@ def write_and_read(ser, command):
         pass
 
 # Enable ADB
+print("Attempting to enable ADB...")
 write_and_read(ser, "AT+KSTRINGB=0,3\r\n")
 write_and_read(ser, "AT+DUMPCTRL=1,0\r\n")
 write_and_read(ser, "AT+DEBUGLVC=0,5\r\n")
