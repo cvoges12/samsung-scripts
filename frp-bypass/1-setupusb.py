@@ -11,7 +11,7 @@ usbcfg = 0x2
 
 dev = usb.core.find(idVendor=VID, idProduct=PID)
 
-counter: Int = 1
+counter: int = 1
 while True:
     print(f"Attempt {counter}: Resetting USB device and setting configuration value...")
     

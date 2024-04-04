@@ -1,12 +1,12 @@
 import serial
 import time
 
-port: String = "/dev/ttyACM0"
-baudrate: Int = 115200
-ser: Serial = serial.Serial(port, baudrate=baudrate)
+port = "/dev/ttyACM0"
+baudrate = 115200
+ser = serial.Serial(port, baudrate=baudrate)
 print(f"Using port {port} set to {baudrate} baud...")
 
-def write_and_read(ser: Serial, command: String):
+def write_and_read(ser, command):
     try:
         ser.write(command.encode())
         time.sleep(1)   # TODO: check when serial port
@@ -14,7 +14,7 @@ def write_and_read(ser: Serial, command: String):
     except Exception:
         pass
 
-def enable_adb(ser: Serial):
+def enable_adb(ser):
     print("Attempting to enable ADB...")
 
     for command in [
