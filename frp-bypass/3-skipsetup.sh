@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
 # ADB should now be enabled, we need to skip Android Setup.
 echo "Please press Allow and Remember device."
 adb kill-server
