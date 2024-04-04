@@ -6,7 +6,7 @@ port="/dev/ttyACM0"
 baudrate=115200
 ser = serial.Serial(port, baudrate=baudrate)
 
-print("Using port", port, "with a baudrate of", baudrate, "...")
+print("Using port", port, "set to", baudrate, "baud...")
 
 # r/w function
 def write_and_read(ser, command):
