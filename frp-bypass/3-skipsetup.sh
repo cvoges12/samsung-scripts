@@ -1,19 +1,5 @@
 #!/usr/bin/env bash
-
-# AT Commands payload
-echo "Sending AT commands..."
-for AT_CMDS in \
-    "AT+KSTRINGB=0,3" \
-    "AT+DUMPCTRL=1,0" \
-    "AT+DEBUGLVC=0,5" \
-    "AT+SWATD=0" \
-    "AT+ACTIVATE=0,0,0" \
-    "AT+SWATD=1" \
-    "AT+DEBUGLVC=0,5"
-do echo $AT_CMDS > /dev/ttyACM0 ; sleep 1
-done
-
-# ADB is now enabled, we need to complete setup.
+# ADB should now be enabled, we need to skip Android Setup.
 echo "Please press Allow and Remember device."
 adb kill-server
 adb wait-for-device
