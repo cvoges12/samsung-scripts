@@ -4,12 +4,9 @@ VID = 0x04e8
 PID = 0x6860
 usbcfg = 0x2
 
-# TODO: look for USB device
-#while (true):
-    #poll for device
-    #break
-
-dev = usb.core.find(idVendor=VID, idProduct=PID)
+print(f"Looking for Samsung device with VID {hex(VID)} and PID {hex(PID)}...")
+while usb.core.find(idVendor=VID, idProduct=PID) is None:
+    dev = usb.core.find(idVendor=VID, idProduct=PID)
 
 counter: int = 1
 while True:
