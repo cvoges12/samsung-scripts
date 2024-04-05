@@ -1,3 +1,6 @@
+#!/bin/sh
+
+
 echo sending AT commands...
 echo "AT+KSTRINGB=0,3" > /dev/ttyACM0 ; sleep 0.5  
 echo "AT+DUMPCTRL=1,0" > /dev/ttyACM0 ; sleep 0.5  
