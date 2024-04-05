@@ -22,3 +22,5 @@ while True:
     except Exception:
         counter += 1
         pass
+
+print(f"Please dial *#0*# in emergency dialer and proceed to script 2")
