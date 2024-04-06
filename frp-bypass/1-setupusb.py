@@ -25,4 +25,4 @@ while True:
         counter += 1
         pass
 
-print(f"Please dial *#0*# in emergency dialer and proceed to script 2")
+print("Please dial *#0*# in emergency dialer and proceed to script 2")
